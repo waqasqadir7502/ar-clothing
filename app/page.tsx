@@ -15,7 +15,8 @@ import arr4 from "./assets/images/multi1.jpg";
 
 import ArrivalProduct from "./components/arrivalProduct/ArrivalProduct";
 
-export const Home = () => {
+
+const Home = () => {
   return (
     <div>
       {/*                     carousal               */}

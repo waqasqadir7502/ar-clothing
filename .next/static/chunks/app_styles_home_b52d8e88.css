@@ -44,16 +44,19 @@
 
 .trending_container {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 50% 40%;
   width: 70%;
   margin: 0 0 0 20%;
+  box-sizing: border-box;
 }
 
 .trend_col1_div {
+  background-color: #4cce52;
 }
 
 .col1_img {
   width: 100%;
+  height: 100%;
   position: relative;
 }
 
@@ -71,10 +74,28 @@
 .trend_col2_div {
   display: grid;
   grid-template-columns: 100%;
+  background-color: #7fffd4;
 }
 
 .col2_img {
-  width: 68%;
+  width: 100%;
+}
+
+.arrival_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px 20px;
+  padding: 20px 3% 40px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.grid_main {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f8ff;
 }
 
 /*# sourceMappingURL=app_styles_home_b52d8e88.css.map*/
