@@ -15,7 +15,6 @@ import arr4 from "./assets/images/multi1.jpg";
 
 import ArrivalProduct from "./components/arrivalProduct/ArrivalProduct";
 
-
 const Home = () => {
   return (
     <div>
@@ -85,16 +84,21 @@ const Home = () => {
         <ArrivalProduct imageUrl={arr3} />
       </div>
 
-
       <div className="grid_main">
-        <div className="grid">
-          <Image src={trend1} alt="wad" />
+        <div className="grid1">
+          <Image src={trend1} alt="wad" className="img1" />
         </div>
-        <div>
-        <Image src={trend2} alt="wda" />
-        <Image src={trend3} alt="wdaw" />
+        <div className="grid2">
+          <Image src={trend2} alt="wda" className="img2" />
+          <Image src={trend3} alt="wdaw" className="img2" />
+        </div>
+        <div className="grid2">
+          <Image src={trend2} alt="wda" className="img2" />
+          <Image src={trend3} alt="wdaw" className="img2" />
         </div>
       </div>
+
+     
     </div>
   );
 };

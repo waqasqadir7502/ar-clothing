@@ -117,8 +117,39 @@
 
 .grid_main{
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 35% 22% 22%;
     width: 100%;
     height:100vh;
-    background-color: aliceblue;
+    gap: 10px 10px;
+    justify-content: center;
 }
+
+.grid1{
+    height: 100vh;
+    justify-items: right;
+}
+
+
+.grid2{
+    display: grid;
+    grid-template-columns: 50vh;
+}
+.img1{
+    height: 99vh;
+    width: 100%;
+}
+.img2{
+    height: 49vh;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
