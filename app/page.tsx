@@ -3,7 +3,13 @@ import "./styles/home.css";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMinus,
+  faCar,
+  faShoppingCart,
+  faPhone,
+  faWallet,
+} from "@fortawesome/free-solid-svg-icons";
 import CategoryProduct from "./components/categoryProduct/CategoryProduct";
 import trend1 from "./assets/images/multi1.jpg";
 import trend2 from "./assets/images/trend1.png";
@@ -14,6 +20,7 @@ import arr3 from "./assets/images/arrivals3.jpg";
 import arr4 from "./assets/images/multi1.jpg";
 
 import ArrivalProduct from "./components/arrivalProduct/ArrivalProduct";
+import Review from "./components/review/Review";
 
 const Home = () => {
   return (
@@ -98,8 +105,48 @@ const Home = () => {
         </div>
       </div>
 
-     
+      <div className="full_width_div">
+        <div className="div_container">
+          <div className="fspw_div">
+            <FontAwesomeIcon icon={faCar}  className="fspw_icon_size"/>
+            <p  className="fspw_heading">Free Delivery</p>
+            <p className="fspw_center_text">Free delivery all across karachi</p>
+          </div>
+          <div className="fspw_div">
+            <FontAwesomeIcon icon={faShoppingCart} className="fspw_icon_size" />
+            <p  className="fspw_heading">Optimized Cart</p>
+            <p className="fspw_center_text">Select your order in optimized cart</p>
+          </div>
+          <div className="fspw_div">
+            <FontAwesomeIcon icon={faPhone} className="fspw_icon_size" />
+            <p className="fspw_heading">Customer Service</p>
+            <p className="fspw_center_text">Call for any Inquiry or to confirm order</p>
+          </div>
+          <div className="fspw_div">
+            <FontAwesomeIcon icon={faWallet} className="fspw_icon_size" />
+            <p className="fspw_heading">Payment methods</p>
+            <p className="fspw_center_text">Various payment methods are available</p>
+          </div>
+        </div>
+      </div>
+
+      {/*  fswp end */}
+
+      <div className="section_heading_div">
+        <FontAwesomeIcon icon={faMinus} className="hr_line" />
+        <p className="section_text">Reviews</p>
+        <FontAwesomeIcon icon={faMinus} className="hr_line" />
+      </div>
+      <div className="review_fwidth_div">
+        <div className="review_grid_div">
+          <Review />
+          <Review />
+          <Review />
+          <Review />
+        </div>
+      </div>
     </div>
+
   );
 };
 
