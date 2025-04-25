@@ -91,7 +91,7 @@ const Home = () => {
         <ArrivalProduct imageUrl={arr3} />
       </div>
 
-      <div className="grid_main">
+      {/* <div className="grid_main">
         <div className="grid1">
           <Image src={trend1} alt="wad" className="img1" />
         </div>
@@ -103,7 +103,7 @@ const Home = () => {
           <Image src={trend2} alt="wda" className="img2" />
           <Image src={trend3} alt="wdaw" className="img2" />
         </div>
-      </div>
+      </div> */}
 
       <div className="full_width_div">
         <div className="div_container">
