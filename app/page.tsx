@@ -2,9 +2,8 @@
 import "./styles/home.css";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import styles from "./styles/carousel.module.css";
-// import "./styles/carousel.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMinus,
@@ -36,31 +35,30 @@ const Home = ({
     "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1200&auto=format&fit=crop",
   ],
 }: CarouselProps) => {
-  const [images, setImages] = useState<string[]>(initialImages);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const goToPrevious = (): void => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? initialImages.length - 1 : prevIndex - 1
     );
   };
 
-  const goToNext = (): void => {
+  const goToNext = useCallback((): void => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === initialImages.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  }, [initialImages.length]);
 
   useEffect(() => {
-    if (images.length > 1) {
+    if (initialImages.length > 1) {
       const timer = setTimeout(goToNext, 5000);
       return () => clearTimeout(timer);
     }
-  }, [currentIndex, images.length]);
+  }, [currentIndex, initialImages.length, goToNext]);
 
   return (
     <div>
-      {/*                     carousal               */}
+      {/* Carousel */}
       <div className={styles.carouselContainer}>
         <div className={styles.carousel}>
           <button
@@ -99,7 +97,7 @@ const Home = ({
         </div>
       </div>
 
-      {/*                     category products              */}
+      {/* Category Products */}
       <div className="section_heading_div">
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
         <p className="section_text">Categories</p>
@@ -112,7 +110,7 @@ const Home = ({
         <CategoryProduct />
       </div>
 
-      {/*                     Trending               */}
+      {/* Trending */}
       <div className="section_heading_div">
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
         <p className="section_text">Trending</p>
@@ -131,13 +129,12 @@ const Home = ({
         </div>
       </div>
 
-      {/*                     new arrivals               */}
+      {/* New Arrivals */}
       <div className="section_heading_div">
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
         <p className="section_text">New Arrival</p>
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
       </div>
-
       <div className="arrival_grid">
         <ArrivalProduct imageUrl={arr1} />
         <ArrivalProduct imageUrl={arr2} />
@@ -146,14 +143,12 @@ const Home = ({
         <ArrivalProduct imageUrl={arr3} />
       </div>
 
-      {/*                     featured               */}
-
+      {/* Featured */}
       <div className="section_heading_div">
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
         <p className="section_text">Featured</p>
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
       </div>
-
       <div className="arrival_grid">
         <ArrivalProduct imageUrl={arr1} />
         <ArrivalProduct imageUrl={arr2} />
@@ -162,20 +157,7 @@ const Home = ({
         <ArrivalProduct imageUrl={arr3} />
       </div>
 
-      {/* <div className="grid_main">
-        <div className="grid1">
-          <Image src={trend1} alt="wad" className="img1" />
-        </div>
-        <div className="grid2">
-          <Image src={trend2} alt="wda" className="img2" />
-          <Image src={trend3} alt="wdaw" className="img2" />
-        </div>
-        <div className="grid2">
-          <Image src={trend2} alt="wda" className="img2" />
-          <Image src={trend3} alt="wdaw" className="img2" />
-        </div>
-      </div> */}
-
+      {/* Services */}
       <div className="full_width_div">
         <div className="div_container">
           <div className="fspw_div">
@@ -207,17 +189,14 @@ const Home = ({
         </div>
       </div>
 
-      {/*  fswp end */}
-
+      {/* Reviews */}
       <div className="section_heading_div">
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
         <p className="section_text">Reviews</p>
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
       </div>
       <div className="review_fwidth_div">
-        {/* <div className="review_grid_div"> */}
-          <Review />
-        {/* </div> */}
+        <Review />
       </div>
     </div>
   );
