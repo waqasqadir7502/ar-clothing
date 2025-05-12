@@ -24,17 +24,15 @@ import arr4 from "./assets/images/multi1.jpg";
 import ArrivalProduct from "./components/arrivalProduct/ArrivalProduct";
 import Review from "./components/review/Review";
 
-interface CarouselProps {
-  initialImages?: string[];
-}
+// Removed CarouselProps interface since page components shouldn't have props
 
-const Home = ({
-  initialImages = [
+export default function Home() {
+  const initialImages = [
     "https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=1200&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1200&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1200&auto=format&fit=crop",
-  ],
-}: CarouselProps) => {
+  ];
+
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const goToPrevious = (): void => {
@@ -201,5 +199,3 @@ const Home = ({
     </div>
   );
 };
-
-export default Home;
