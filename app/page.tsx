@@ -2,6 +2,9 @@
 import "./styles/home.css";
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import styles from "./styles/carousel.module.css";
+// import "./styles/carousel.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMinus,
@@ -22,11 +25,79 @@ import arr4 from "./assets/images/multi1.jpg";
 import ArrivalProduct from "./components/arrivalProduct/ArrivalProduct";
 import Review from "./components/review/Review";
 
-const Home = () => {
+interface CarouselProps {
+  initialImages?: string[];
+}
+
+const Home = ({
+  initialImages = [
+    "https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1200&auto=format&fit=crop",
+  ],
+}: CarouselProps) => {
+  const [images, setImages] = useState<string[]>(initialImages);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  const goToPrevious = (): void => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = (): void => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  useEffect(() => {
+    if (images.length > 1) {
+      const timer = setTimeout(goToNext, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, images.length]);
+
   return (
     <div>
       {/*                     carousal               */}
-      <div></div>
+      <div className={styles.carouselContainer}>
+        <div className={styles.carousel}>
+          <button
+            className={`${styles.navButton} ${styles.leftButton}`}
+            onClick={goToPrevious}
+            aria-label="Previous slide"
+          >
+            &lt;
+          </button>
+
+          <div className={styles.slidesContainer}>
+            {initialImages.map((image, index) => (
+              <div
+                key={index}
+                className={styles.slide}
+                style={{
+                  opacity: index === currentIndex ? 1 : 0,
+                  transform: "none",
+                  transition: "opacity 0.8s ease-in-out",
+                  backgroundImage: `url(${image})`,
+                }}
+                aria-hidden={index !== currentIndex}
+                role="group"
+                aria-label={`Slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            className={`${styles.navButton} ${styles.rightButton}`}
+            onClick={goToNext}
+            aria-label="Next slide"
+          >
+            &gt;
+          </button>
+        </div>
+      </div>
 
       {/*                     category products              */}
       <div className="section_heading_div">
@@ -108,24 +179,30 @@ const Home = () => {
       <div className="full_width_div">
         <div className="div_container">
           <div className="fspw_div">
-            <FontAwesomeIcon icon={faCar}  className="fspw_icon_size"/>
-            <p  className="fspw_heading">Free Delivery</p>
+            <FontAwesomeIcon icon={faCar} className="fspw_icon_size" />
+            <p className="fspw_heading">Free Delivery</p>
             <p className="fspw_center_text">Free delivery all across karachi</p>
           </div>
           <div className="fspw_div">
             <FontAwesomeIcon icon={faShoppingCart} className="fspw_icon_size" />
-            <p  className="fspw_heading">Optimized Cart</p>
-            <p className="fspw_center_text">Select your order in optimized cart</p>
+            <p className="fspw_heading">Optimized Cart</p>
+            <p className="fspw_center_text">
+              Select your order in optimized cart
+            </p>
           </div>
           <div className="fspw_div">
             <FontAwesomeIcon icon={faPhone} className="fspw_icon_size" />
             <p className="fspw_heading">Customer Service</p>
-            <p className="fspw_center_text">Call for any Inquiry or to confirm order</p>
+            <p className="fspw_center_text">
+              Call for any Inquiry or to confirm order
+            </p>
           </div>
           <div className="fspw_div">
             <FontAwesomeIcon icon={faWallet} className="fspw_icon_size" />
             <p className="fspw_heading">Payment methods</p>
-            <p className="fspw_center_text">Various payment methods are available</p>
+            <p className="fspw_center_text">
+              Various payment methods are available
+            </p>
           </div>
         </div>
       </div>
@@ -138,15 +215,11 @@ const Home = () => {
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
       </div>
       <div className="review_fwidth_div">
-        <div className="review_grid_div">
+        {/* <div className="review_grid_div"> */}
           <Review />
-          <Review />
-          <Review />
-          <Review />
-        </div>
+        {/* </div> */}
       </div>
     </div>
-
   );
 };
 

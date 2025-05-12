@@ -13,11 +13,15 @@
 .footer_logo_container{
     padding: 20px 30px 0 30px;
     justify-items: center;
-    /* align-content: center; */
+}
+
+.logo_center{
+    text-align: center;
 }
 
 .footer_logo{
     width: 50%;
+    margin: 0 auto;
 }
 
 .footer_logo_text{
@@ -49,7 +53,6 @@
 }
 
 .footer_links{
-    /* font-size: 1rem; */
     color: var(--hovering-effect);
     margin: 5px 0;
 }
