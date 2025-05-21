@@ -3,8 +3,7 @@ import ProductCard from "../../components/productfilter/product";
 
 
 
-export const dynamicParams = false; // Set to true if you want to allow any dynamic params
-
+export const dynamicParams = false; 
 // Generate static paths if using static generation
 export async function generateStaticParams() {
   return Object.keys(products.reduce((acc, product) => {
