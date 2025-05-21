@@ -1,30 +1,35 @@
 import { products } from "../../pages/data/product";
 import ProductCard from "../../components/productfilter/product";
+import { Metadata } from 'next';
 
+export const dynamicParams = false;
 
-
-export const dynamicParams = false; 
-// Generate static paths if using static generation
 export async function generateStaticParams() {
-  return Object.keys(products.reduce((acc, product) => {
-    acc[product.category.toLowerCase()] = true;
-    return acc;
-  }, {} as Record<string, boolean>)).map((category) => ({
-    category,
-  }));
+  const categories = new Set(products.map(product => product.category.toLowerCase()));
+  return Array.from(categories).map(category => ({ category }));
 }
 
-interface CategoryPageProps {
+export async function generateMetadata({
+  params,
+}: {
+  params: { category: string };
+}): Promise<Metadata> {
+  return {
+    title: `${params.category.charAt(0).toUpperCase() + params.category.slice(1)} Collection`,
+  };
+}
+
+interface PageProps {
   params: {
     category: string;
   };
 }
 
-export default function CategoryPage({ params }: CategoryPageProps) {
+export default function CategoryPage({ params }: PageProps) {
   const { category } = params;
 
   const filteredProducts = products.filter(
-    (product) => product.category.toLowerCase() === category.toLowerCase()
+    product => product.category.toLowerCase() === category.toLowerCase()
   );
 
   return (
