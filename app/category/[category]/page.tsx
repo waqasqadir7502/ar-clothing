@@ -1,13 +1,27 @@
-import { products } from "../../pages/data/product"; 
+import { products } from "../../pages/data/product";
 import ProductCard from "../../components/productfilter/product";
-// import { type PageProps } from 'next';
 
-interface Props {
-  params: { category: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+
+
+export const dynamicParams = false; // Set to true if you want to allow any dynamic params
+
+// Generate static paths if using static generation
+export async function generateStaticParams() {
+  return Object.keys(products.reduce((acc, product) => {
+    acc[product.category.toLowerCase()] = true;
+    return acc;
+  }, {} as Record<string, boolean>)).map((category) => ({
+    category,
+  }));
 }
 
-export default function CategoryPage({ params }: Props) {
+interface CategoryPageProps {
+  params: {
+    category: string;
+  };
+}
+
+export default function CategoryPage({ params }: CategoryPageProps) {
   const { category } = params;
 
   const filteredProducts = products.filter(
@@ -19,7 +33,6 @@ export default function CategoryPage({ params }: Props) {
       <h1 className="text-2xl font-bold capitalize mb-4">
         {category} Collection
       </h1>
-
       {filteredProducts.length === 0 ? (
         <p>No products found in this category.</p>
       ) : (
