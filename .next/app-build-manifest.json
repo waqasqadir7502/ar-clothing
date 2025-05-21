@@ -1,42 +1,42 @@
 {
   "pages": {
-    "/_not-found/page": [
-      "static/chunks/[root of the server]__589207b6._.css",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_96372c86._.js",
-      "static/chunks/node_modules_next_ce8a13d2._.js",
-      "static/chunks/node_modules_@fortawesome_free-solid-svg-icons_index_mjs_6d4e8d45._.js",
-      "static/chunks/node_modules_@fortawesome_free-brands-svg-icons_index_mjs_660f2e06._.js",
-      "static/chunks/node_modules_69fd3a8b._.js",
-      "static/chunks/app_35e7952b._.js",
-      "static/chunks/app_layout_tsx_f0e4c1a2._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_49a6ea35._.js",
-      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
-      "static/chunks/node_modules_next_dist_client_43e3ffb8._.js",
-      "static/chunks/node_modules_next_dist_3bfaed20._.js",
-      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
-      "static/chunks/_e69f0d32._.js",
-      "static/chunks/_be317ff2._.js"
-    ],
     "/page": [
-      "static/chunks/[root of the server]__589207b6._.css",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_96372c86._.js",
-      "static/chunks/node_modules_next_ce8a13d2._.js",
+      "static/chunks/[root-of-the-server]__1d33b264._.css",
+      "static/chunks/node_modules_next_11d28e93._.js",
       "static/chunks/node_modules_@fortawesome_free-solid-svg-icons_index_mjs_6d4e8d45._.js",
       "static/chunks/node_modules_@fortawesome_free-brands-svg-icons_index_mjs_660f2e06._.js",
       "static/chunks/node_modules_69fd3a8b._.js",
       "static/chunks/app_35e7952b._.js",
-      "static/chunks/app_layout_tsx_f0e4c1a2._.js",
+      "static/chunks/app_layout_tsx_c0237562._.js",
       "static/chunks/app_50c80e86._.css",
       "static/chunks/node_modules_@fortawesome_free-regular-svg-icons_index_mjs_4e322c92._.js",
       "static/chunks/app_6d65c7ae._.js",
-      "static/chunks/app_page_tsx_94691dec._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_49a6ea35._.js",
+      "static/chunks/app_page_tsx_dbd8b52a._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
-      "static/chunks/node_modules_next_dist_client_43e3ffb8._.js",
-      "static/chunks/node_modules_next_dist_3bfaed20._.js",
+      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
+      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
       "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
       "static/chunks/_e69f0d32._.js",
-      "static/chunks/_be317ff2._.js"
+      "static/chunks/_93808211._.js"
+    ],
+    "/pages/category/[category]/page": [
+      "static/chunks/[root-of-the-server]__1d33b264._.css",
+      "static/chunks/node_modules_next_11d28e93._.js",
+      "static/chunks/node_modules_@fortawesome_free-solid-svg-icons_index_mjs_6d4e8d45._.js",
+      "static/chunks/node_modules_@fortawesome_free-brands-svg-icons_index_mjs_660f2e06._.js",
+      "static/chunks/node_modules_69fd3a8b._.js",
+      "static/chunks/app_35e7952b._.js",
+      "static/chunks/app_layout_tsx_c0237562._.js",
+      "static/chunks/app_components_productfilter_product_tsx_c144118b._.js",
+      "static/chunks/app_pages_category_[category]_page_tsx_dbd8b52a._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
+      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
+      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
+      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
+      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
+      "static/chunks/_e69f0d32._.js",
+      "static/chunks/_93808211._.js"
     ]
   }
 }

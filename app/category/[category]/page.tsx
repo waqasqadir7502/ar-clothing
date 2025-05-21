@@ -19,13 +19,12 @@ export async function generateMetadata({
   };
 }
 
-interface PageProps {
-  params: {
-    category: string;
-  };
-}
-
-export default function CategoryPage({ params }: PageProps) {
+// Remove the PageProps interface and use inline typing
+export default function CategoryPage({
+  params
+}: {
+  params: { category: string }
+}) {
   const { category } = params;
 
   const filteredProducts = products.filter(
