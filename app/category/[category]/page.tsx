@@ -1,7 +1,6 @@
-// app/category/[category]/page.tsx
 
-import { products } from "../../data/product"; 
-import ProductCard from "../../../components/productfilter/product";
+import { products } from "../../pages/data/product"; 
+import ProductCard from "../../components/productfilter/product";
 
 type Props = {
   params: {
