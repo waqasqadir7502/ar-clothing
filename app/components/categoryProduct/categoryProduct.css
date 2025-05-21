@@ -1,13 +1,17 @@
 .product_container{
     display : grid;
     grid-template-columns: 100%;
-    background-color: var( --hovering-effect);
     border-radius: 5px;
     height: 410px;
     width: 350px;
     justify-content: center;
     margin: 0 auto;
     
+}
+.product_container:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    background-color: var(--hovering-effect);
 }
 
 .product_img_div{
@@ -17,7 +21,6 @@
 
 .pro_img{
     width: 100%;
-    border-radius: 15px;
 }
 
 .product_name_div{

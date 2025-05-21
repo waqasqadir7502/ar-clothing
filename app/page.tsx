@@ -24,7 +24,7 @@ import arr4 from "./assets/images/multi1.jpg";
 import ArrivalProduct from "./components/arrivalProduct/ArrivalProduct";
 import Review from "./components/review/Review";
 
-// Removed CarouselProps interface since page components shouldn't have props
+
 
 export default function Home() {
   const initialImages = [
@@ -102,6 +102,8 @@ export default function Home() {
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
       </div>
       <div className="category_product_div">
+        <CategoryProduct />
+        <CategoryProduct />
         <CategoryProduct />
         <CategoryProduct />
         <CategoryProduct />
