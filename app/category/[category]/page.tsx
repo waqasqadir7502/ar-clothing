@@ -1,6 +1,5 @@
-
-import { products } from "../../pages/data/product"; 
-import ProductCard from "../../components/productfilter/product";
+import { products } from "@/app/pages/data/product";
+import ProductCard from "@/app/components/productfilter/product";
 
 type Props = {
   params: {
