@@ -1,11 +1,11 @@
-import { products } from "@/app/pages/data/product";
-import ProductCard from "@/app/components/productfilter/product";
+import { products } from "../../data/product"; 
+import ProductCard from "../../../components/productfilter/product";
+import { type PageProps } from 'next';
 
-type Props = {
-  params: {
-    category: string;
-  };
-};
+interface Props {
+  params: { category: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
 
 export default function CategoryPage({ params }: Props) {
   const { category } = params;
