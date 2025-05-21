@@ -3,13 +3,13 @@
 import { products } from "../../data/product"; 
 import ProductCard from "../../../components/productfilter/product";
 
-interface CategoryPageProps {
+type Props = {
   params: {
     category: string;
   };
-}
+};
 
-export default function CategoryPage({ params }: CategoryPageProps) {
+export default function CategoryPage({ params }: Props) {
   const { category } = params;
 
   const filteredProducts = products.filter(
