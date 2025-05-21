@@ -1,12 +1,15 @@
 // app/category/[category]/page.tsx
+
 import { products } from "../../data/product"; 
 import ProductCard from "../../../components/productfilter/product";
 
-export default function CategoryPage({
-  params,
-}: {
-  params: { category: string };
-}) {
+interface CategoryPageProps {
+  params: {
+    category: string;
+  };
+}
+
+export default function CategoryPage({ params }: CategoryPageProps) {
   const { category } = params;
 
   const filteredProducts = products.filter(
