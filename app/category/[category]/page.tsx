@@ -1,6 +1,6 @@
-import { products } from "../../data/product"; 
-import ProductCard from "../../../components/productfilter/product";
-import { type PageProps } from 'next';
+import { products } from "../../pages/data/product"; 
+import ProductCard from "../../components/productfilter/product";
+// import { type PageProps } from 'next';
 
 interface Props {
   params: { category: string };
