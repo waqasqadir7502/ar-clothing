@@ -5,7 +5,7 @@ const CategoryProduct = () => {
   return (
     <div className="product_container">
       <div className="product_img_div">
-        <Image src={pic} alt="" className="pro_img"/>
+        <Image src={pic} alt="image" className="pro_img"/>
       </div>
       <div className="product_name_div">
         Shirt
