@@ -141,7 +141,7 @@ function LoginForm({ toggleAuthMode }: AuthFormProps) {
       }}>Login</button>
       
       <p style={{ marginTop: '1.5rem', textAlign: 'center', color: '#666' }}>
-        Don't have an account?{' '}
+        Don&apos;t have an account?
         <button 
           type="button" 
           onClick={toggleAuthMode} 
