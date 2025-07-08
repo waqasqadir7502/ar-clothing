@@ -22,14 +22,7 @@ const RelatedProduct = () => {
         return () => clearInterval(interval)
     }, [products.length])
 
-    // Product visibility 
-    const getVisibleProducts = () => {
-        const result = [];
-        for (let i = 0; i < VISIBLE_COUNT; i++) {
-            result.push(products[(index + i) % products.length]);
-        }
-        return result;
-    };
+
 
     return (
         <div className={styles.carouselContainer}>
