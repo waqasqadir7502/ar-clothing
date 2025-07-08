@@ -1,8 +1,8 @@
 "use client"
 
-import styles from "./productdetails.module.css"
 import { useState } from "react";
 import RelatedProduct from "../../components/relatedProduct/RelatedProduct";
+import styles from "./productdetails.module.css"
 
 const product = {
   name: 'Classic Leather Sneakers',
@@ -17,7 +17,7 @@ const product = {
   colors: ['#000000', '#ffffff', '#ff0000', '#0000ff'],
 };
 
-const page = () => {
+const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState(product.images[0]);
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [quantity, setQuantity] = useState(1);
@@ -92,4 +92,4 @@ const page = () => {
   )
 }
 
-export default page
+export default ProductDetail
