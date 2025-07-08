@@ -14,7 +14,7 @@ export const products = [
     name: "White Kameez Shalwar",
     category: "kameez-shalwar",
     price: 3500,
-    image: { img1 },
+    image: { img2 },
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ export const products = [
     name: "Blue Suit",
     category: "suits",
     price: 7500,
-    image: { img1 },
+    image: { img2 },
   },
   {
     id: 5,
@@ -84,7 +84,7 @@ export const products = [
     name: "red shirt",
     category: "shirts",
     price: 10500,
-    image: { img1 },
+    image: { img2 },
   },
   {
     id: 13,
