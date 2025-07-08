@@ -31,8 +31,6 @@ const RelatedProduct = () => {
         return result;
     };
 
-    const visibleProducts = getVisibleProducts();
-
     return (
         <div className={styles.carouselContainer}>
             <h2 className={styles.heading}>Related Products</h2>
