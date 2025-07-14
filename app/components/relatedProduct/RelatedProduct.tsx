@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './relatedproduct.module.css';
 import { products as allProducts } from "../../pages/data/product"
 import Image from 'next/image';
-import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
+
 
 const VISIBLE_COUNT = 3
 const products = allProducts.slice(0, 6)
@@ -13,7 +13,6 @@ const RelatedProduct = () => {
     const total = products.length;
     const [index, setIndex] = useState(total);
     const [isAnimating, setIsAnimating] = useState(true);
-    const trackRef = useRef<HTMLDivElement>(null);;
 
     // Build full slide list [CloneEnd , real, cloneStart]
     const slides = [...products, ...products, ...products]; // 3x
