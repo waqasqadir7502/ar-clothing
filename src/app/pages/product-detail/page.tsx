@@ -1,7 +1,7 @@
 "use client"
-
+import { products as allProducts} from "../data/product";
 import { useState } from "react";
-import RelatedProduct from "../../components/relatedProduct/RelatedProduct";
+import RelatedProduct from "../../../components/relatedProduct/RelatedProduct";
 import styles from "./productdetails.module.css"
 
 
@@ -18,6 +18,9 @@ const product = { // Dummy data
   colors: ['#000000', '#ffffff', '#ff0000', '#0000ff'],
   sizes: ["S","M","L","XL"]
 };
+
+const prod = allProducts
+console.log(prod)
 
 const tabs = ["Description","Reviews","Comments"]// For Switchable tabs
 

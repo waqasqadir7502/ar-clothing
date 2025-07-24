@@ -1,12 +1,12 @@
 "use client"
-import React, { useEffect,  useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './relatedproduct.module.css';
-import { products as allProducts } from "../../pages/data/product"
+import { products as allProducts } from "../../app/pages/data/product"
 import Image from 'next/image';
 
 
 const VISIBLE_COUNT = 3
-const products = allProducts.slice(0, 6)
+const products = allProducts.slice(0, 7)
 
 const RelatedProduct = () => {
 
@@ -60,15 +60,20 @@ const RelatedProduct = () => {
                     <div className={styles.carouselTrack} style={{
                         transform: `translateX(-${(100 / VISIBLE_COUNT) * index}%)`,
                         transition: isAnimating ? 'transform 0.5s ease-in-out' : 'none',
-                        
+
                     }}>
                         {slides.map((products, i) => {
                             return (
                                 <div className={styles.slide} key={`${products.id} - ${i}`}>
-                                    <Image src={products.image.img1 || products.image.img2 || "/fallback.jpg"}
-                                        alt={products.name}
-                                        className={styles.productImage}
-                                    />
+                                    <div className={styles.imageWrapper}>
+                                        <Image
+                                            src={(products.images ?? "/fallback.jpg") as string}
+                                            alt={products.name}
+                                            fill
+                                            className={styles.productImage}
+                                             sizes="(max-width: 600px) 100vw, 400px"
+                                        />
+                                    </div>
                                     <div className={styles.productInfo}>
                                         <p className={styles.productName}>{products.name}</p>
                                         <p className={styles.productPrice}>{products.price}</p>
@@ -76,7 +81,6 @@ const RelatedProduct = () => {
                                 </div>
                             )
                         })}
-
                     </div>
 
                 </div>

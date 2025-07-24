@@ -12,17 +12,17 @@ import {
   faPhone,
   faWallet,
 } from "@fortawesome/free-solid-svg-icons";
-import CategoryProduct from "./components/categoryProduct/CategoryProduct";
-import trend1 from "./assets/images/multi1.jpg";
-import trend2 from "./assets/images/trend1.png";
-import trend3 from "./assets/images/trend2.png";
-import arr1 from "./assets/images/arrival1.jpg";
-import arr2 from "./assets/images/arrivals2.jpg";
-import arr3 from "./assets/images/arrivals3.jpg";
-import arr4 from "./assets/images/multi1.jpg";
+import CategoryProduct from "../components/categoryProduct/CategoryProduct";
+import trend1 from "../assets/images/multi1.jpg";
+import trend2 from "../assets/images/trend1.png";
+import trend3 from "../assets/images/trend2.png";
+import arr1 from "../assets/images/arrival1.jpg";
+import arr2 from "../assets/images/arrivals2.jpg";
+import arr3 from "../assets/images/arrivals3.jpg";
+import arr4 from "../assets/images/multi1.jpg";
 
-import ArrivalProduct from "./components/arrivalProduct/ArrivalProduct";
-import Review from "./components/review/Review";
+import ArrivalProduct from "../components/arrivalProduct/ArrivalProduct";
+import Review from "../components/review/Review";
 
 
 

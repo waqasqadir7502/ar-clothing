@@ -23,7 +23,7 @@ export default function CategoryPage({
         <div key={product.id} className="catergory_product_card">
           <div className="card_img_div">
             <Image
-              src={product.image.img1 || product.image.img2 || "/placeholder.png"}
+              src={product.images || "/fallback.png"}
               alt={product.name}
               width={300}
               height={300}
