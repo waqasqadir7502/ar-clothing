@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import "./styles/home.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,16 +12,16 @@ import {
   faPhone,
   faWallet,
 } from "@fortawesome/free-solid-svg-icons";
-import CategoryProduct from "../components/categoryProduct/CategoryProduct";
+// import CategoryProduct from "../components/categoryProduct/CategoryProduct";
 import trend1 from "../assets/images/multi1.jpg";
 import trend2 from "../assets/images/trend1.png";
 import trend3 from "../assets/images/trend2.png";
-import arr1 from "../assets/images/arrival1.jpg";
-import arr2 from "../assets/images/arrivals2.jpg";
-import arr3 from "../assets/images/arrivals3.jpg";
-import arr4 from "../assets/images/multi1.jpg";
+// import arr1 from "../assets/images/arrival1.jpg";
+// import arr2 from "../assets/images/arrivals2.jpg";
+// import arr3 from "../assets/images/arrivals3.jpg";
+// import arr4 from "../assets/images/multi1.jpg";
 
-import ArrivalProduct from "../components/arrivalProduct/ArrivalProduct";
+// import ArrivalProduct from "../components/arrivalProduct/ArrivalProduct";
 import Review from "../components/review/Review";
 
 
@@ -102,12 +102,12 @@ export default function Home() {
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
       </div>
       <div className="category_product_div">
+        {/* <CategoryProduct />
         <CategoryProduct />
         <CategoryProduct />
         <CategoryProduct />
         <CategoryProduct />
-        <CategoryProduct />
-        <CategoryProduct />
+        <CategoryProduct /> */}
       </div>
 
       {/* Trending */}
@@ -135,12 +135,8 @@ export default function Home() {
         <p className="section_text">New Arrival</p>
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
       </div>
-      <div className="arrival_grid">
-        <ArrivalProduct imageUrl={arr1} />
-        <ArrivalProduct imageUrl={arr2} />
-        <ArrivalProduct imageUrl={arr3} />
-        <ArrivalProduct imageUrl={arr4} />
-        <ArrivalProduct imageUrl={arr3} />
+      <div className="">
+      
       </div>
 
       {/* Featured */}
@@ -149,12 +145,8 @@ export default function Home() {
         <p className="section_text">Featured</p>
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
       </div>
-      <div className="arrival_grid">
-        <ArrivalProduct imageUrl={arr1} />
-        <ArrivalProduct imageUrl={arr2} />
-        <ArrivalProduct imageUrl={arr3} />
-        <ArrivalProduct imageUrl={arr4} />
-        <ArrivalProduct imageUrl={arr3} />
+      <div className="">
+  
       </div>
 
       {/* Services */}
