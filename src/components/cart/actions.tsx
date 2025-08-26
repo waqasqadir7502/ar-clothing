@@ -17,7 +17,7 @@ export async function addItem(
   selectedVariantId: string | undefined
 ) {
   const cookieStore = await cookies();
- const cartId = cookieStore.get("cartId")?.value;
+  const cartId = cookieStore.get("cartId")?.value;
 
   if (!cartId || !selectedVariantId) {
     return "Error adding item to cart";
@@ -28,13 +28,13 @@ export async function addItem(
       { merchandiseId: selectedVariantId, quantity: 1 },
     ]);
     revalidateTag(TAGS.cart);
-  } catch (error) {
+  } catch (_error) {
     return "Error adding item to cart";
   }
 }
 
 export async function updateItemQuantity(
-  prevState: any,
+  prevState: unknown,
   payload: {
     merchandiseId: string;
     quantity: number;
@@ -82,7 +82,7 @@ export async function updateItemQuantity(
   }
 }
 
-export async function removeItem(prevState: any, merchandiseId: string) {
+export async function removeItem(prevState: unknown, merchandiseId: string) {
   const cookieStore = await cookies();
   const cartId = cookieStore.get("cartId")?.value;
 
@@ -106,7 +106,7 @@ export async function removeItem(prevState: any, merchandiseId: string) {
     } else {
       return "Item not found in cart";
     }
-  } catch (error) {
+  } catch (_error) {
     return "Error removing item from cart";
   }
 }
@@ -116,15 +116,15 @@ export async function redirectToCheckout() {
   const cartId = cookieStore.get("cartId")?.value;
 
   if (!cartId) {
-      console.error("Missing cart ID"); 
-    return; 
+    console.error("Missing cart ID");
+    return;
   }
 
-  let cart = await getCart(cartId);
+  const cart = await getCart(cartId);
 
   if (!cart) {
-    console.error("Error fetching cart"); 
-    return; 
+    console.error("Error fetching cart");
+    return;
   }
 
   redirect(cart.checkoutUrl);

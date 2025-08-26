@@ -4,7 +4,6 @@ import { getMenu } from "@/src/lib/shopify";
 import { Menu } from "@/src/lib/shopify/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 
 export default async function Footer() {
   const menu1 = await getMenu("footer");
