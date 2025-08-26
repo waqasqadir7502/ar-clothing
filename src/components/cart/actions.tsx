@@ -28,7 +28,8 @@ export async function addItem(
       { merchandiseId: selectedVariantId, quantity: 1 },
     ]);
     revalidateTag(TAGS.cart);
-  } catch (_error) {
+  } catch (error) {
+    console.error(error);
     return "Error adding item to cart";
   }
 }
@@ -106,7 +107,8 @@ export async function removeItem(prevState: unknown, merchandiseId: string) {
     } else {
       return "Item not found in cart";
     }
-  } catch (_error) {
+  } catch (error) {
+    console.error(error);
     return "Error removing item from cart";
   }
 }
