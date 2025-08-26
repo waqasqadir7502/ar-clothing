@@ -132,7 +132,7 @@ export default function Home() {
       {/* New Arrivals */}
       <div className="section_heading_div">
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
-        <p className="section_text">New Arrival</p>
+        <p className="section_text">New Arrival</p>   
         <FontAwesomeIcon icon={faMinus} className="hr_line" />
       </div>
       <div className="">
