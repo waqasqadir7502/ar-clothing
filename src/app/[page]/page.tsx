@@ -4,9 +4,10 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata(
-  { params }: { params: { page: string } }
-): Promise<Metadata> {
-  const page = await getPage(params.page);
+  { params }: {  params: Promise<{ page: string }>;
+}): Promise<Metadata> {
+  const { page: handle } = await params;
+  const page = await getPage(handle);
 
   if (!page) return notFound();
 
@@ -22,9 +23,10 @@ export async function generateMetadata(
 }
 
 export default async function Page(
-  { params }: { params: { page: string } }
-) {
-  const page = await getPage(params.page);
+  { params }: {   params: Promise<{ page: string }>;
+}) {
+  const { page: handle } = await params;
+  const page = await getPage(handle);
 
   if (!page) return notFound();
 
