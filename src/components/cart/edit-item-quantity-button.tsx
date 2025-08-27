@@ -27,7 +27,7 @@ function SubmitButton({ type }: { type: "plus" | "minus" }) {
   );
 }
 
-type CartAction = "delete" | "add" | "minus" | "plus"
+type CartAction = "delete" | "minus" | "plus"
 
 export function EditItemQuantityButton({
   item,
