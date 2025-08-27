@@ -8,7 +8,7 @@ export default async function CategoryPage({
   searchParams,
 }: {
   params: { collection: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams?: { [key: string]: string | string[] | undefined }
 }) {
   const sort = searchParams?.sort as string | undefined;
   const { sortKey, reverse } =

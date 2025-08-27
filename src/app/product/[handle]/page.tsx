@@ -13,7 +13,7 @@ import { Suspense } from "react";
 export async function generateMetadata({
   params,
 }: {
-  params:{ handle: string };
+  params:{ handle: string }
 }): Promise<Metadata> {
   const product = await getProduct(params.handle);
 
@@ -51,7 +51,7 @@ export async function generateMetadata({
 export default async function ProductPage({
   params,
 }: {
-  params: { handle: string };
+  params: { handle: string }
 }) {
  
   const product = await getProduct(params.handle);

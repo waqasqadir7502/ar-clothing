@@ -6,7 +6,7 @@ import { getProducts } from "@/src/lib/shopify";
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams?: { [key: string]: string | string[] | undefined }
 }) {
   const sort = searchParams?.sort as string | undefined;
   const searchValue = searchParams?.q as string | undefined;
