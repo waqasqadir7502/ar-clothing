@@ -13,9 +13,9 @@ import { Suspense } from "react";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ handle: string }>;
+  params:{ handle: string };
 }): Promise<Metadata> {
-  const { handle } = await params;
+  const { handle } = params;
   const product = await getProduct(handle);
 
   if (!product) return notFound();

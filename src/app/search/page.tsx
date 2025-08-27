@@ -6,11 +6,10 @@ import { getProducts } from "@/src/lib/shopify";
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+  searchParams?: { [key: string]: string | string[] | undefined };
 }) {
-  const params = await searchParams;
-  const sort = params?.sort as string | undefined;
-  const searchValue = params?.q as string | undefined;
+  const sort = searchParams?.sort as string | undefined;
+  const searchValue = searchParams?.q as string | undefined;
   const { sortKey, reverse } =
     sorting.find((item) => item.slug === sort) || defaultSort;
   const products = await getProducts({ sortKey, reverse, query: searchValue });
