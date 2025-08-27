@@ -7,16 +7,16 @@ export default async function CategoryPage({
   params,
   searchParams,
 }: {
-  params: { collection: string };
+  params: Promise<{ collection: string }>;
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
- 
+  const awaitedParams = await params
   const awaitSearchParams = await searchParams;
   const sort = awaitSearchParams?.sort as string | undefined;
   const { sortKey, reverse } =
     sorting.find((item) => item.slug === sort) || defaultSort;
   const products = await getCollectionProducts({
-    collection: params.collection,
+    collection: awaitedParams.collection,
     sortKey,
     reverse,
   });
