@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata(
-  { params }: { params: { page: any } }
+  { params }: { params: { page: string } }
 ): Promise<Metadata> {
 
   const page = await getPage(params.page);
@@ -23,7 +23,7 @@ export async function generateMetadata(
 }
 
 export default async function Page(
-  { params }: {   params: { page: any };
+  { params }: {   params: { page: string }
 }) {
 
   const page = await getPage(params.page);
