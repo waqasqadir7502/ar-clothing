@@ -100,20 +100,12 @@ export async function shopifyFetch<T>({
       status: result.status,
       body,
     };
-  } catch (error) {
-    if (isShopifyError(error)) {
-      throw {
-        cause: error.cause?.toString() || "Unknown error occurred",
-        status: error.status || 500,
-        message: error.message,
-        query,
-      };
-    }
+  } catch (error: any) {
+    console.error("❌ Shopify Fetch Error:", error);
 
-    throw {
-      error,
-      query,
-    };
+    throw new Error(
+      `ShopifyFetch failed: ${error?.message || "Unknown error"}\nQuery: ${query}`
+    );
   }
 }
 
