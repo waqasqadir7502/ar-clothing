@@ -232,6 +232,7 @@ export async function getCollections(): Promise<Collection[]> {
   const res = await shopifyFetch<ShopifyCollectionsOperation>({
     query: getCollectionsQuery,
     tags: [TAGS.collections],
+    cache: "force-cache"
   });
 
   const shopifyCollections = removeEdgesandNodes(res?.body?.data?.collections);
@@ -273,6 +274,7 @@ export async function getCollectionProducts({
       reverse,
       sortKey: sortKey === "CREATED_AT" ? "CREATED" : sortKey,
     },
+    cache: "force-cache"
   });
 
   if (!res.body.data.collection) {
