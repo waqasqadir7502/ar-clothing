@@ -44,5 +44,5 @@ export const sorting: SortFilterItem[] = [
 ];
 
 export const HIDDEN_PRODUCTS_TAGS = "nextjs-frontend-hidden"
-export const SHOPIFY_GRAPHQL_API_ENDPOINT = "/api/2025-07/graphql.json";
+export const SHOPIFY_GRAPHQL_API_ENDPOINT = "/api/2024-04/graphql.json";
 export const DEFAULT_OPTION = "Default Title";
