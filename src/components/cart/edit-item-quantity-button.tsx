@@ -2,7 +2,7 @@ import { CartItem } from "@/src/lib/shopify/types";
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { updateItemQuantity } from "./actions";
-import { useActionState } from "react";
+import { useFormState } from "react-dom";
 
 function SubmitButton({ type }: { type: "plus" | "minus" }) {
   return (
@@ -27,7 +27,7 @@ function SubmitButton({ type }: { type: "plus" | "minus" }) {
   );
 }
 
-type CartAction = "delete" | "minus" | "plus"
+type CartAction = "delete" | "minus" | "plus";
 
 export function EditItemQuantityButton({
   item,
@@ -38,7 +38,7 @@ export function EditItemQuantityButton({
   type: "plus" | "minus";
   optimisticUpdate: (merchandiseId: string, action: CartAction) => void;
 }) {
-  const [message, formAction] = useActionState(updateItemQuantity, null);
+  const [message, formAction] = useFormState(updateItemQuantity, null);
   const payload = {
     merchandiseId: item.merchandise.id,
     quantity: type === "plus" ? item.quantity + 1 : item.quantity - 1,

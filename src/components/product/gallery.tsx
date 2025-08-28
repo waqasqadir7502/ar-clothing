@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -23,7 +23,7 @@ export default function Gallery({
 
   return (
     <form>
-      <div  className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
+      <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
         {images[imageIndex] && (
           <Image
             className="h-full w-full object-contain"

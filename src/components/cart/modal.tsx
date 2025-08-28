@@ -93,8 +93,7 @@ export default function CartModal() {
                   )
                 )
                 .map((item, i) => {
-                  const merchandiseSearchParams =
-                    {} as MerchandiseSearchParams;
+                  const merchandiseSearchParams = {} as MerchandiseSearchParams;
 
                   item.merchandise.selectedOptions.forEach(
                     ({ name, value }) => {

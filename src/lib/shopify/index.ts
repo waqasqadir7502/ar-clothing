@@ -122,7 +122,7 @@ export async function getMenu(handle: string): Promise<Menu[]> {
     query: getMenuQuery,
     tags: [TAGS.collections],
     variables: { handle },
-    cache: "no-store",
+    cache: "no-store", //to be removed in production 
   });
 
   return (
@@ -241,7 +241,7 @@ export async function getCollections(): Promise<Collection[]> {
   const res = await shopifyFetch<ShopifyCollectionsOperation>({
     query: getCollectionsQuery,
     tags: [TAGS.collections],
-    cache: "no-store"
+    cache: "no-store" //To be removed
   });
 
   const shopifyCollections = removeEdgesandNodes(res?.body?.data?.collections);

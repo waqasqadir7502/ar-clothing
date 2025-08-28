@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ProductOption, ProductVariant } from "@/src/lib/shopify/types";
 import { useProduct, useUpdateURL } from "./product-context";

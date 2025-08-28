@@ -3,7 +3,7 @@
 import { CartItem } from "@/src/lib/shopify/types";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { removeItem } from "./actions";
-import { useActionState } from "react";
+import { useFormState } from "react-dom";
 import { UpdateType } from "./cart-context";
 
 export function DeleteItemButton({
@@ -13,7 +13,7 @@ export function DeleteItemButton({
   item: CartItem;
   optimisticUpdate: (merchandiseId: string, action: UpdateType) => void;
 }) {
-  const [message, formAction] = useActionState(removeItem, null);
+  const [message, formAction] = useFormState(removeItem, null);
   const merchandiseId = item.merchandise.id;
   const actionWithVariant = formAction.bind(null, merchandiseId);
 

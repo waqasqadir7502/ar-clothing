@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import { addItem } from "./actions";
 import { Product, ProductVariant } from "@/src/lib/shopify/types";
-import { useActionState } from "react";
+import { useFormState } from "react-dom";
 
 function SubmitButton({
   availableForSale,
@@ -62,7 +62,7 @@ function SubmitButton({
     const { variants, availableForSale } = product;
     const { addCartItem } = useCart();
     const { state } = useProduct();
-    const [message, formAction] = useActionState(addItem, null);
+    const [message, formAction] = useFormState(addItem, null);
     const variant = variants.find((variant: ProductVariant) =>
       variant.selectedOptions.every(
         (option) => option.value === state[option.name.toLowerCase()]

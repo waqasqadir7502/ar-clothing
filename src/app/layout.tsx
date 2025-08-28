@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter ,  } from "next/font/google";
 import "./globals.css";
 // import Navbar from "../components/navbar/Navbar";
 import { Navbar } from "../components/layout/navbar";
@@ -8,12 +8,12 @@ import { CartProvider } from "../components/cart/cart-context";
 import { cookies } from "next/headers";
 import { getCart } from "../lib/shopify";
 // import Footer from "../components/footer/Footer";
-const geistSans = Geist({
+const geistSans = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = Inter({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
